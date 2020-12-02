@@ -1,12 +1,16 @@
 package Biciclette;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
+    static ListaBiciclette lista = new ListaBiciclette();
 
     public static void main(String[] args) {
-	    Scanner input = new Scanner(System.in);
-        ListaBiciclette lista = new ListaBiciclette();
+        Scanner input = new Scanner(System.in);
+
+        inzializzaBici();
 
         int scelta;
 
@@ -38,6 +42,39 @@ public class Main {
             else if(scelta == 5){
                 lista.stampaBiciclette();
             }
-	    }
+        }
     }
+
+    private static void inzializzaBici() {
+        try{
+            // Controlla se il file esiste
+            File biciVecchie = new File("bici.txt");
+            if(!biciVecchie.canRead()){
+                biciVecchie.createNewFile();
+            }
+
+            // Roba per leggere
+            Scanner fileInput = new Scanner(biciVecchie);
+            String riga, marca,modello;
+            String[] comp;
+            double prezzo;
+
+            // Comincia a leggere riga per riga
+            while(fileInput.hasNextLine()){
+                riga = fileInput.nextLine();
+                comp = riga.split(",");
+
+                marca = comp[0];
+                modello = comp[1];
+                prezzo = Double.parseDouble(comp[2]);
+
+                lista.aggiungiBicicletta(new Bicicletta(marca,modello,prezzo));
+            }
+        }
+        catch(IOException e){
+            System.out.println("Non so creare un file");
+            e.printStackTrace();
+        }
+    }
+
 }

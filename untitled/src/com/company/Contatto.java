@@ -1,3 +1,5 @@
+package com.company;
+
 class Contatto{
     private String nome;
     private String cognome;

@@ -1,0 +1,8 @@
+ciao,test,22.1
+chao,test,23.2
+mdww,cswa,24.3
+crbs,ebvt,25.4
+ciuo,tast,26.5
+biao,test,27.6
+aiao,test,28.7
+abco,test,29.8
