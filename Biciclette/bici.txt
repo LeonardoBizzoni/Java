@@ -1,0 +1,3 @@
+ciao coso,cui,34.727000000000004
+ciao coso,test,45.1
+ciao,cai,45.7

@@ -6,12 +6,11 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    static ListaBiciclette lista = new ListaBiciclette();
 
     public static void main(String[] args) throws IOException {
-        Scanner input = new Scanner(System.in);
-
-        inzializzaBici();
+        Scanner strInput = new Scanner(System.in);
+        Scanner numInput = new Scanner(System.in);
+        ListaBiciclette lista = new ListaBiciclette();
 
         int scelta;
 
@@ -23,24 +22,24 @@ public class Main {
             }
             else if(scelta == 1){
                 System.out.print("Inserisci marca, modello, prezzo: ");
-                Bicicletta nuovaBici = new Bicicletta(input.nextLine(), input.nextLine(), input.nextDouble());
+                Bicicletta nuovaBici = new Bicicletta(strInput.nextLine(), strInput.nextLine(), numInput.nextDouble());
                 lista.aggiungiBicicletta(nuovaBici);
 
                 System.out.println("Bici aggiunta");
             }
             else if(scelta == 2){
                 System.out.print("Inserisci marca, modello: ");
-                lista.cancellaBicicletta(input.nextLine(), input.nextLine());
+                lista.cancellaBicicletta(strInput.nextLine(), strInput.nextLine());
                 System.out.println("Bici tolta");
             }
             else if(scelta == 3){
                 System.out.print("Inserisci marca, modello, prezzo, sconto: ");
-                lista.scontaBicicletta(input.nextLine(), input.nextLine(), input.nextInt());
+                lista.scontaBicicletta(strInput.nextLine(), strInput.nextLine(), numInput.nextInt());
                 System.out.println("Bici scontata");
             }
             else if(scelta == 4){
                 System.out.print("Inserisci marca: ");
-                lista.cercaBicicletta(input.nextLine());
+                lista.cercaBicicletta(strInput.nextLine());
             }
             else if(scelta == 5){
                 lista.stampaBiciclette();
@@ -48,39 +47,6 @@ public class Main {
         }
 
         lista.updateFile();
-    }
-
-    private static void inzializzaBici() {
-        try{
-            // Controlla se il file esiste
-            File biciVecchie = new File("bici.txt");
-            if(!biciVecchie.canRead()){
-                biciVecchie.createNewFile();
-            }
-
-            // Roba per leggere
-            Scanner fileInput = new Scanner(biciVecchie);
-            String riga, marca,modello;
-            String[] comp;
-            double prezzo;
-
-            // Comincia a leggere riga per riga
-            while(fileInput.hasNextLine()){
-                riga = fileInput.nextLine();
-                comp = riga.split(",");
-
-                marca = comp[0];
-                modello = comp[1];
-                prezzo = Double.parseDouble(comp[2]);
-
-                lista.aggiungiBicicletta(new Bicicletta(marca,modello,prezzo));
-            }
-
-            fileInput.close();
-        }
-        catch(IOException e){
-            e.printStackTrace();
-        }
     }
 
 }

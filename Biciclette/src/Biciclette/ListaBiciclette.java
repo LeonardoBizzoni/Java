@@ -1,12 +1,47 @@
 package Biciclette;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class ListaBiciclette {
     List<Bicicletta> listaBici = new ArrayList<>();
+
+    public ListaBiciclette(){
+        try{
+            // Controlla se il file esiste
+            File biciVecchie = new File("bici.txt");
+            if(!biciVecchie.canRead()){
+                biciVecchie.createNewFile();
+            }
+
+            // Roba per leggere
+            Scanner fileInput = new Scanner(biciVecchie);
+            String riga, marca,modello;
+            String[] comp;
+            double prezzo;
+
+            // Comincia a leggere riga per riga
+            while(fileInput.hasNextLine()){
+                riga = fileInput.nextLine();
+                comp = riga.split(",");
+
+                marca = comp[0];
+                modello = comp[1];
+                prezzo = Double.parseDouble(comp[2]);
+
+                aggiungiBicicletta(new Bicicletta(marca,modello,prezzo));
+            }
+
+            fileInput.close();
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
+    }
 
     void aggiungiBicicletta(Bicicletta bici) {
         listaBici.add(bici);
