@@ -50,7 +50,7 @@ public class ListaBiciclette {
             fw.close();
         }
         catch (IOException e){
-            System.out.println("Errore");
+            e.printStackTrace();
         }
         finally {
             if (fw != null) {

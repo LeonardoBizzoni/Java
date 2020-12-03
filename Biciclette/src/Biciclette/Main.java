@@ -24,7 +24,7 @@ public class Main {
             else if(scelta == 1){
                 System.out.print("Inserisci marca, modello, prezzo: ");
                 try {
-                    Bicicletta nuovaBici = new Bicicletta(input.next(), input.next(), input.nextDouble());
+                    Bicicletta nuovaBici = new Bicicletta(input.nextLine(), input.nextLine(), input.nextDouble());
                     lista.aggiungiBicicletta(nuovaBici);
                     lista.updateFile(nuovaBici);
                 } catch (IOException e) {
@@ -81,7 +81,6 @@ public class Main {
             fileInput.close();
         }
         catch(IOException e){
-            System.out.println("Non so creare un file");
             e.printStackTrace();
         }
     }
