@@ -1,13 +1,14 @@
 package Biciclette;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
     static ListaBiciclette lista = new ListaBiciclette();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner input = new Scanner(System.in);
 
         inzializzaBici();
@@ -22,7 +23,13 @@ public class Main {
             }
             else if(scelta == 1){
                 System.out.print("Inserisci marca, modello, prezzo: ");
-                lista.aggiungiBicicletta(new Bicicletta(input.next(), input.next(), input.nextDouble()));
+                try {
+                    Bicicletta nuovaBici = new Bicicletta(input.next(), input.next(), input.nextDouble());
+                    lista.aggiungiBicicletta(nuovaBici);
+                    lista.updateFile(nuovaBici);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 System.out.println("Bici aggiunta");
             }
             else if(scelta == 2){
@@ -70,6 +77,8 @@ public class Main {
 
                 lista.aggiungiBicicletta(new Bicicletta(marca,modello,prezzo));
             }
+
+            fileInput.close();
         }
         catch(IOException e){
             System.out.println("Non so creare un file");

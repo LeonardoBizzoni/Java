@@ -1,12 +1,14 @@
 package Biciclette;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListaBiciclette {
-    List<Bicicletta> listaBici = new ArrayList<Bicicletta>();
+    List<Bicicletta> listaBici = new ArrayList<>();
 
-    void aggiungiBicicletta(Bicicletta bici){
+    void aggiungiBicicletta(Bicicletta bici) {
         listaBici.add(bici);
     }
 
@@ -37,6 +39,23 @@ public class ListaBiciclette {
     void stampaBiciclette(){
         for (Bicicletta bici : listaBici) {
             System.out.println(bici.toString());
+        }
+    }
+
+    void updateFile(Bicicletta bici) throws IOException {
+        FileWriter fw = null;
+        try{
+            fw = new FileWriter("bici.txt",true);
+            fw.write(bici.getMarca() + "," + bici.getModello() + "," + bici.getPrezzo() + "\n");
+            fw.close();
+        }
+        catch (IOException e){
+            System.out.println("Errore");
+        }
+        finally {
+            if (fw != null) {
+                fw.close();
+            }
         }
     }
 }
