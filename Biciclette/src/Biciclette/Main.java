@@ -23,33 +23,31 @@ public class Main {
             }
             else if(scelta == 1){
                 System.out.print("Inserisci marca, modello, prezzo: ");
-                try {
-                    Bicicletta nuovaBici = new Bicicletta(input.nextLine(), input.nextLine(), input.nextDouble());
-                    lista.aggiungiBicicletta(nuovaBici);
-                    lista.updateFile(nuovaBici);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                Bicicletta nuovaBici = new Bicicletta(input.nextLine(), input.nextLine(), input.nextDouble());
+                lista.aggiungiBicicletta(nuovaBici);
+
                 System.out.println("Bici aggiunta");
             }
             else if(scelta == 2){
                 System.out.print("Inserisci marca, modello: ");
-                lista.cancellaBicicletta(input.next(), input.next());
+                lista.cancellaBicicletta(input.nextLine(), input.nextLine());
                 System.out.println("Bici tolta");
             }
             else if(scelta == 3){
                 System.out.print("Inserisci marca, modello, prezzo, sconto: ");
-                lista.scontaBicicletta(input.next(), input.next(), input.nextInt());
+                lista.scontaBicicletta(input.nextLine(), input.nextLine(), input.nextInt());
                 System.out.println("Bici scontata");
             }
             else if(scelta == 4){
                 System.out.print("Inserisci marca: ");
-                lista.cercaBicicletta(input.next());
+                lista.cercaBicicletta(input.nextLine());
             }
             else if(scelta == 5){
                 lista.stampaBiciclette();
             }
         }
+
+        lista.updateFile();
     }
 
     private static void inzializzaBici() {

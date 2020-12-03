@@ -42,11 +42,13 @@ public class ListaBiciclette {
         }
     }
 
-    void updateFile(Bicicletta bici) throws IOException {
+    void updateFile() throws IOException {
         FileWriter fw = null;
         try{
-            fw = new FileWriter("bici.txt",true);
-            fw.write(bici.getMarca() + "," + bici.getModello() + "," + bici.getPrezzo() + "\n");
+            fw = new FileWriter("bici.txt");
+            for (Bicicletta bici : listaBici) {
+                fw.write(bici.getMarca() + "," + bici.getModello() + "," + bici.getPrezzo() + "\n");
+            }
             fw.close();
         }
         catch (IOException e){
