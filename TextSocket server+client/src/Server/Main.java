@@ -1,5 +1,6 @@
 package Server;
 
+import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
@@ -14,18 +15,24 @@ public class Main {
             while(true){
                 System.out.println("In attesa di connesioni");
                 Socket socket = serverSocket.accept();
+                PrintWriter printWriter = new PrintWriter(socket.getOutputStream());
                 System.out.printf("Connessione avviata con %s\n", socket.getRemoteSocketAddress());
 
                 // prende l'input stream dal socket
                 Scanner data = new Scanner(socket.getInputStream());
                 while(true){
                     mes = data.nextLine();
-                    if(mes.equals("x"))
+                    if(mes.equals("")){
                         break;
+                    }
+
+                    printWriter.println(mes);
+                    printWriter.flush();
 
                     System.out.println(mes);
                 }
 
+                printWriter.close();
                 socket.close();
                 System.out.println("Connessione terminata\n--------------------------------");
             }

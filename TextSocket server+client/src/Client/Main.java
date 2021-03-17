@@ -14,6 +14,7 @@ public class Main {
 
             // prende l'output del socket
             PrintWriter data = new PrintWriter(socket.getOutputStream());
+            Scanner back = new Scanner(socket.getInputStream());
 
             while(true){
                 System.out.print("Messaggio da inviare al server: ");
@@ -25,6 +26,7 @@ public class Main {
                     break;
 
                 data.flush(); // invia la string
+                System.out.println("Riga ricevuta: " + back.nextLine());
             }
 
             data.close(); // chiude l'output stream
