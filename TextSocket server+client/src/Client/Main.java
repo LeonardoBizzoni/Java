@@ -19,12 +19,10 @@ public class Main {
             while(true){
                 System.out.print("Messaggio da inviare al server: ");
 
-                messaggio = input.nextLine();
-                data.println(messaggio);
-
-                if(messaggio.equals("x"))
+                if((messaggio = input.nextLine()).equals("x"))
                     break;
 
+                data.println(messaggio);
                 data.flush(); // invia la string
                 System.out.println("Riga ricevuta: " + back.nextLine());
             }
