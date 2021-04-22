@@ -11,8 +11,7 @@ public class Main {
 
             while(true){
                 System.out.println("In attesa di connesioni");
-                Socket socket = serverSocket.accept();
-                new Thread(new Listener(socket)).start();
+                new Thread(new Listener(serverSocket.accept())).start();
             }
         } catch (Exception e) {
             e.printStackTrace();

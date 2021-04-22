@@ -14,6 +14,7 @@ public class Listener implements Runnable {
     public void run(){
         String mes;
         String socketAddress;
+
         try {
             PrintWriter printWriter = new PrintWriter(socket.getOutputStream());
             System.out.printf("Connessione avviata con %s\n", (socketAddress=String.valueOf(socket.getRemoteSocketAddress())));
