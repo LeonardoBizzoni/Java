@@ -44,55 +44,68 @@ public class GuiClient extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(161, 161, 161)
-                        .addComponent(list1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(287, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(44, 44, 44)
+                                                .addComponent(jButton1))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(161, 161, 161)
+                                                .addComponent(list1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap(287, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jButton1)
-                .addGap(122, 122, 122)
-                .addComponent(list1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(137, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addComponent(jButton1)
+                                .addGap(122, 122, 122)
+                                .addComponent(list1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(137, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // si collega al server e riceve la lista di file
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+
+
+
         try {
             socket = new Socket("127.0.0.1", 8001);
             pw = new PrintWriter(socket.getOutputStream());
             Scanner serv = new Scanner(socket.getInputStream());
-            
-	        while (serv.hasNextLine()) {
-			    if((tempName = serv.nextLine()).equals("finito"))
-			        break;
-    		    list1.add(tempName);
-	        }
+
+            while (serv.hasNextLine()) {
+                if((tempName = serv.nextLine()).equals(""))
+                    break;
+                list1.add(tempName);
+            }
         } catch (Exception ex) {
             Logger.getLogger(GuiClient.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void list1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_list1ActionPerformed
-        if(socket == null){
+
+
+
+        if (socket.isClosed()){
             try {
                 socket = new Socket("127.0.0.1", 8001);
                 pw = new PrintWriter(socket.getOutputStream());
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (Exception ex) {
+                Logger.getLogger(GuiClient.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+
         // invia il nome selezionato
         tempName = list1.getSelectedItem();
         pw.println(tempName);
@@ -103,9 +116,7 @@ public class GuiClient extends javax.swing.JFrame {
             receiver = new DataInputStream(socket.getInputStream());
             fileWriter = new FileOutputStream(tempName);
 
-            while(true){
-                if((data = receiver.read()) == -1)
-                    break;
+            while ((data = receiver.read()) != -1) {
                 fileWriter.write(data);
             }
         } catch (Exception e) {
@@ -113,8 +124,15 @@ public class GuiClient extends javax.swing.JFrame {
         }
 
         list1.select(-1);
-        pw=null;
-        socket=null;
+        try {
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+
     }//GEN-LAST:event_list1ActionPerformed
 
     /**
@@ -124,7 +142,7 @@ public class GuiClient extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -154,10 +172,10 @@ public class GuiClient extends javax.swing.JFrame {
 
     private Socket socket;
     private PrintWriter pw;
-	private String tempName;
-	private DataInputStream receiver;
-	private FileOutputStream fileWriter;
-	private int data;
+    private String tempName;
+    private DataInputStream receiver;
+    private FileOutputStream fileWriter;
+    private int data;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private java.awt.List list1;
