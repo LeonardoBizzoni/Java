@@ -14,7 +14,7 @@ public class Listener implements Runnable {
         this.client = client;
 
         try {
-            this.pw = new PrintWriter(client.getOutputStream());
+            this.pw = new PrintWriter(client.getOutputStream(), true);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -30,14 +30,10 @@ public class Listener implements Runnable {
             // invia la lista di file al client
             for (File file : listaFile) {
                 pw.println(file.getName());
-                pw.flush();
             }
             pw.println("");
-            pw.flush();
 
             Main.sendFile(client);
-
-            client.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

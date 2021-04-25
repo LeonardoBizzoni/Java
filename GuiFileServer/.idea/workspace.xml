@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e9d9c9f8-c5c0-4049-a35f-55b00c0b724b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Files" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GuiFileServer.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GuiFileServerNetbeans.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GuiFileServer/Client/GetFile.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GuiFileServer/Client/GuiClient$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GuiFileServer/Client/GuiClient$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GuiFileServer/Client/GuiClient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GuiFileServer/Server/Listener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GuiFileServer/Server/Listener2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GuiFileServer/Server/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GuiFileServer/com/intellij/uiDesigner/core/AbstractLayout.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GuiFileServer/com/intellij/uiDesigner/core/DimensionInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GuiFileServer/com/intellij/uiDesigner/core/GridConstraints.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GuiFileServer/com/intellij/uiDesigner/core/GridLayoutManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GuiFileServer/com/intellij/uiDesigner/core/HorizontalInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GuiFileServer/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GuiFileServer/com/intellij/uiDesigner/core/Spacer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GuiFileServer/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GuiFileServer/com/intellij/uiDesigner/core/SupportCode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GuiFileServer/com/intellij/uiDesigner/core/Util.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/GuiFileServer/com/intellij/uiDesigner/core/VerticalInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Client/GetFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Client/GuiClient.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Client/GuiClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Server/Listener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Server/Listener2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Server/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Biciclette/src/Biciclette/ListaBiciclette.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Biciclette/src/Biciclette/ListaBiciclette.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ContoCorrente/.project" beforeDir="false" afterPath="$PROJECT_DIR$/../ContoCorrente/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FileServer server+client/src/Server/Listener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FileServer server+client/src/Server/Listener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Harddisk/.project" beforeDir="false" afterPath="$PROJECT_DIR$/../Harddisk/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Harddisk/bin/Nicchi.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Harddisk/bin/Nicchi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Harddisk/bin/ProvaHD.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Harddisk/bin/ProvaHD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Swing1/src/Swing1/App1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Swing1/src/Swing1/App1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Viaggi/.project" beforeDir="false" afterPath="$PROJECT_DIR$/../Viaggi/.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../listaCinese/.project" beforeDir="false" afterPath="$PROJECT_DIR$/../listaCinese/.project" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1rcpW5u0bJ8t4SFNs17dxPdnnGz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Server" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Server">
+    <configuration name="Client" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Client.GuiClient" />
+      <module name="GuiFileServer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Server.Main" />
+      <module name="GuiFileServer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Server" />
+      <item itemvalue="Application.Client" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e9d9c9f8-c5c0-4049-a35f-55b00c0b724b" name="Default Changelist" comment="" />
+      <created>1619285264637</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619285264637</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

@@ -1,5 +1,6 @@
 package Server;
 
+import java.io.IOException;
 import java.net.Socket;
 
 public class Listener2 implements Runnable {
@@ -11,10 +12,9 @@ public class Listener2 implements Runnable {
 
     @Override
     public void run() {
-        Main.sendFile(client);
         try {
-            client.close();
-        } catch (Exception e) {
+            Main.sendFile(client);
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
